@@ -1,0 +1,12 @@
+/* line 1, ../../app/styles/app.scss */
+
+body {
+  background-color: #eeeeee;
+}
+
+/* line 5, ../../app/styles/app.scss */
+
+.message {
+  padding: 15px;
+  border: 1px solid;
+}
