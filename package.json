@@ -4,7 +4,7 @@
   },
   "scripts": {
     "postinstall": "npm run bower && npm run build && npm run rejoice",
-    "build": "./node_modules/grunt-cli/bin/grunt --base public --gruntfile public/Gruntfile.js build",
+    "build": "./node_modules/grunt-cli/bin/grunt --base public --gruntfile public/Gruntfile.js build --force",
     "bower": "cd public && ../node_modules/.bin/bower install && cd ..",
     "rejoice": "echo HELL YEAH!",
     "start": "node server.js",
