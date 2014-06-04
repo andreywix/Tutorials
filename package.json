@@ -3,7 +3,8 @@
     "node": "0.10.x"
   },
   "scripts": {
-    "build": "cd public && grunt build && cd ..",
+    "postinstall": "npm run build && npm run rejoice",
+    "build": "./node_modules/grunt-cli/bin/grunt --base public --gruntfile public/GruntFile.js build",
     "rejoice": "echo HELL YEAH!",
     "start": "node index.js",
     "test": "node_modules/.bin/mocha tests/"
