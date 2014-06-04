@@ -3,8 +3,9 @@
     "node": "0.10.x"
   },
   "scripts": {
-    "postinstall": "bower install && npm run build && npm run rejoice",
-    "build": "./node_modules/grunt-cli/bin/grunt --base public --gruntfile public/Gruntfile.js build --force",
+    "postinstall": "npm run bower && npm run build && npm run rejoice",
+    "build": "./node_modules/grunt-cli/bin/grunt --base public --gruntfile public/Gruntfile.js build",
+    "bower": "cd public && ../node_modules/.bin/bower install && cd ..",
     "rejoice": "echo HELL YEAH!",
     "start": "node server.js",
     "test": "node_modules/.bin/mocha tests/"
