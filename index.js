@@ -4,7 +4,7 @@ var myToUpper = require('./touppercase-module.js');
 
 var app = express();
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/public/dist'));
 app.use(bodyParser());
 
 app.post('/post', function(req, res){
