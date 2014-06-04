@@ -14,11 +14,12 @@ describe('toUpperCaseModule', function() {
 });
 
 describe('POST /post', function() {
-    it('should return text that was sent', function(done){
+    it('should return UPPERCASED text that was sent', function(done){
         request(app)
           .post('/post')
           .send('myinput=wazzzzzup')
           .expect('WAZZZZZUP')
+          .expect('content-type', /text/)
           .expect(200, done);
     });
 });

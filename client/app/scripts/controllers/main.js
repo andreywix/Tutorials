@@ -8,11 +8,9 @@ angular.module('wixApp')
         $scope.message = event;
       });
     };
-    var filterTest;
     $wix.addEventListener($wix.Events.SETTINGS_UPDATED, $scope.handleEvent);
     $scope.$watch('testInput', function (newValue, oldValue) {
-      filterTest = $filter('inputToUpperFilter');
-      $scope.test = filterTest(newValue);
+      $scope.test = $filter('inputToUpperFilter')(newValue);
     });
     //$scope.testInput = "hello";
     if ($wix.Utils.getViewMode() !== 'standalone') {
