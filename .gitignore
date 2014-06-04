@@ -1,2 +1,4 @@
 bower_components
 node_modules
+public/test/coverage/
+public/dist
