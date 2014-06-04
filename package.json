@@ -3,7 +3,7 @@
     "node": "0.10.x"
   },
   "scripts": {
-    "postinstall": "npm run build && npm run rejoice",
+    //"postinstall": "npm run build && npm run rejoice",
     "build": "cd public && grunt build && cd ..",
     "rejoice": "echo HELL YEAH!",
     "start": "node index.js",
