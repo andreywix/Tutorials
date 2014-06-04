@@ -39,10 +39,10 @@ module.exports = function (grunt) {
         tasks: ['newer:jshint:test', 'karma']
       },
       //
-      compass: {
-        files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
-        tasks: ['compass:server', 'autoprefixer']
-      },
+      // compass: {
+      //   files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
+      //   tasks: ['compass:server', 'autoprefixer']
+      // },
       // 
       gruntfile: {
         files: ['Gruntfile.js']
@@ -148,33 +148,56 @@ module.exports = function (grunt) {
 
     //
     // Compiles Sass to CSS and generates necessary files if requested
-    compass: {
-      options: {
-        sassDir: '<%= yeoman.app %>/styles',
-        cssDir: '.tmp/styles',
-        generatedImagesDir: '.tmp/images/generated',
-        imagesDir: '<%= yeoman.app %>/images',
-        javascriptsDir: '<%= yeoman.app %>/scripts',
-        fontsDir: '<%= yeoman.app %>/styles/fonts',
-        importPath: '<%= yeoman.app %>/bower_components',
-        httpImagesPath: '/images',
-        httpGeneratedImagesPath: '/images/generated',
-        httpFontsPath: '/styles/fonts',
-        relativeAssets: false,
-        assetCacheBuster: false
-      },
-      dist: {
-        options: {
-          generatedImagesDir: '<%= yeoman.dist %>/images/generated'
-        }
-      },
-      server: {
-        options: {
-          debugInfo: true
-        }
-      }
-    },
+    // compass: {
+    //   options: {
+    //     sassDir: '<%= yeoman.app %>/styles',
+    //     cssDir: '.tmp/styles',
+    //     generatedImagesDir: '.tmp/images/generated',
+    //     imagesDir: '<%= yeoman.app %>/images',
+    //     javascriptsDir: '<%= yeoman.app %>/scripts',
+    //     fontsDir: '<%= yeoman.app %>/styles/fonts',
+    //     importPath: '<%= yeoman.app %>/bower_components',
+    //     httpImagesPath: '/images',
+    //     httpGeneratedImagesPath: '/images/generated',
+    //     httpFontsPath: '/styles/fonts',
+    //     relativeAssets: false,
+    //     assetCacheBuster: false
+    //   },
+    //   dist: {
+    //     options: {
+    //       generatedImagesDir: '<%= yeoman.dist %>/images/generated'
+    //     }
+    //   },
+    //   server: {
+    //     options: {
+    //       debugInfo: true
+    //     }
+    //   }
+    // },
     //
+    // less: {
+    //   development: {
+    //     options: {
+    //       paths: ['<%= yeoman.app %>/styles']
+    //     },
+    //     files: {
+    //       "path/to/result.css": "path/to/source.less"
+    //     }
+    //   },
+    //   production: {
+    //     options: {
+    //       paths: ['<%= yeoman.app %>/styles'],
+    //       cleancss: true,
+    //       modifyVars: {
+    //         imgPath: '"http://mycdn.com/path/to/images"',
+    //         bgColor: 'red'
+    //       }
+    //     },
+    //     files: {
+    //       "path/to/result.css": "path/to/source.less"
+    //     }
+    //   }
+    // },
 
     // Renames files for browser caching purposes
     rev: {
@@ -189,6 +212,7 @@ module.exports = function (grunt) {
         }
       }
     },
+
 
     // Reads HTML for usemin blocks to enable smart builds that automatically
     // concat, minify and revision files. Creates configurations in memory so
@@ -293,26 +317,26 @@ module.exports = function (grunt) {
     },
 
     // Run some tasks in parallel to speed up the build process
-    concurrent: {
-      server: [
-        //
-        'compass:server',
-        //
-      ],
-      test: [
-        //
-        'compass',
-        //
-      ],
-      dist: [
-        //
-        'compass:dist',
-        //
-//        'imagemin',
-//        'svgmin'
-//        'htmlmin'
-      ]
-    },
+//     concurrent: {
+//       server: [
+//         //
+//         'compass:server',
+//         //
+//       ],
+//       test: [
+//         //
+//         'compass',
+//         //
+//       ],
+//       dist: [
+//         //
+//         'compass:dist',
+//         //
+// //        'imagemin',
+// //        'svgmin'
+// //        'htmlmin'
+//       ]
+//     },
 
     // By default, your `index.html`'s <!-- Usemin block --> will take care of
     // minification. These next options are pre-configured if you do not wish
