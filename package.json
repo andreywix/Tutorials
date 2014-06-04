@@ -4,7 +4,7 @@
   },
   "scripts": {
     "postinstall": "npm run build && npm run rejoice",
-    "build": "./node_modules/grunt-cli/bin/grunt --base public --gruntfile public/GruntFile.js build",
+    "build": "./node_modules/grunt-cli/bin/grunt --base public --gruntfile public/Gruntfile.js build",
     "rejoice": "echo HELL YEAH!",
     "start": "node index.js",
     "test": "node_modules/.bin/mocha tests/"
