@@ -317,26 +317,26 @@ module.exports = function (grunt) {
     },
 
     // Run some tasks in parallel to speed up the build process
-//     concurrent: {
-//       server: [
+     concurrent: {
+      server: [
 //         //
 //         'compass:server',
 //         //
-//       ],
-//       test: [
+      ],
+      test: [
 //         //
 //         'compass',
 //         //
-//       ],
-//       dist: [
+      ],
+      dist: [
 //         //
 //         'compass:dist',
 //         //
 // //        'imagemin',
 // //        'svgmin'
 // //        'htmlmin'
-//       ]
-//     },
+      ]
+     },
 
     // By default, your `index.html`'s <!-- Usemin block --> will take care of
     // minification. These next options are pre-configured if you do not wish
@@ -425,7 +425,7 @@ module.exports = function (grunt) {
     'uglify',
     'rev',
     'usemin',
-    'clean:components'
+    //'clean:components'
   ]);
 
   grunt.registerTask('default', [
