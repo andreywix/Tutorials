@@ -320,17 +320,17 @@ module.exports = function (grunt) {
       }
     },
 
-    bower: {
-        install: {
-          options: {
-            targetDir: 'app/bower_components',
-            install: true,
-            verbose: false,
-            cleanTargetDir: false,
-            cleanBowerDir: false
-          }
-        }
-      },
+    // bower: {
+    //     install: {
+    //       options: {
+    //         targetDir: 'app/bower_components',
+    //         install: true,
+    //         verbose: false,
+    //         cleanTargetDir: false,
+    //         cleanBowerDir: false
+    //       }
+    //     }
+    //   },
 
     // Run some tasks in parallel to speed up the build process
      concurrent: {
@@ -431,7 +431,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
-    'bower:install',
+    //'bower:install',
     'useminPrepare',
     'concurrent:dist',
     'autoprefixer',
