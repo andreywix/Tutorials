@@ -415,8 +415,8 @@ module.exports = function (grunt) {
   });
 
   grunt.registerTask('build', [
-    'bower',
     'clean:dist',
+    'bower:install',
     'useminPrepare',
     'concurrent:dist',
     'autoprefixer',
