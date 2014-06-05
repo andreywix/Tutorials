@@ -298,18 +298,6 @@ module.exports = function (grunt) {
         ]
       },
 
-      bower: {
-          install: {
-              options: {
-                  targetDir: 'public/app/bower_components',
-                  install: true,
-                  verbose: false,
-                  cleanTargetDir: false,
-                  cleanBowerDir: false
-              }
-          }
-      },
-
       styles: {
         expand: true,
         cwd: '<%= yeoman.app %>/styles',
@@ -317,6 +305,18 @@ module.exports = function (grunt) {
         src: '{,*/}*.css'
       }
     },
+
+    bower: {
+        install: {
+          options: {
+            targetDir: 'app/bower_components',
+            install: true,
+            verbose: false,
+            cleanTargetDir: false,
+            cleanBowerDir: false
+          }
+        }
+      },
 
     // Run some tasks in parallel to speed up the build process
      concurrent: {
@@ -331,6 +331,7 @@ module.exports = function (grunt) {
 //         //
       ],
       dist: [
+        'stylus'
 //         //
 //         'compass:dist',
 //         //
@@ -428,7 +429,6 @@ module.exports = function (grunt) {
     'uglify',
     'rev',
     'usemin',
-    'stylus'
     //'clean:components'
   ]);
 
