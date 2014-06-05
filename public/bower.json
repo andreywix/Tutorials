@@ -3,8 +3,8 @@
   "appPath": "app",
   "private": true,
   "dependencies": {
-    "angular": "~1.2.0",
-    "angular-route": "~1.2.0",
+    "angular": "1.2.16",
+    "angular-route": "1.2.16",
 
     "jquery": "~1.9.1",
     "wix-ui-lib2": "~2.1.4",

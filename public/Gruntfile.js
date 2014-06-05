@@ -264,18 +264,23 @@ module.exports = function (grunt) {
     // Replace Google CDN references
     cdnify: {
       dist: {
-        options: {
-          base: '//ajax.googleapis.com/ajax/libs/'
-        },
-        files: [{
-          expand: true,
-          cwd: '<%= yeoman.dist %>',
-          src: '*.html',
-          dest: '<%= yeoman.dist %>'
-        }]
-        //html: ['<%= yeoman.dist %>/*.html']
+        html: ['<%= yeoman.dist %>/*.html']
       }
     },
+    // cdnify: {
+    //   dist: {
+    //     options: {
+    //       base: '//ajax.googleapis.com/ajax/libs/'
+    //     },
+    //     files: [{
+    //       expand: true,
+    //       cwd: '<%= yeoman.dist %>',
+    //       src: '*.html',
+    //       dest: '<%= yeoman.dist %>'
+    //     }]
+    //     //html: ['<%= yeoman.dist %>/*.html']
+    //   }
+    // },
 
     // Copies remaining files to places other tasks can use
     copy: {

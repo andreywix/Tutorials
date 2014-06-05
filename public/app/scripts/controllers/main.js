@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('wixApp')
-  .controller('MainCtrl', function ($scope, $wix, $filter, inputToUpper) {
+  .controller('MainCtrl', function ($scope, $wix, $filter) {
 
     $scope.handleEvent = function(event) {
       $scope.$apply(function() {
