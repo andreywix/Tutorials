@@ -3,9 +3,8 @@
     "node": "0.10.x"
   },
   "scripts": {
-    "postinstall": "npm run bower && npm run build && npm run rejoice",
-    "build": "./node_modules/grunt-cli/bin/grunt --base public --gruntfile public/Gruntfile.js build --force",
-    "bower": "cd public && ../node_modules/.bin/bower install && cd ..",
+    "postinstall": "npm run build && npm run rejoice",
+    "build": "./node_modules/grunt-cli/bin/grunt --base public --gruntfile public/Gruntfile.js build",
     "rejoice": "echo HELL YEAH!",
     "start": "node server.js",
     "test": "node_modules/.bin/mocha tests/"
@@ -24,6 +23,7 @@
     "grunt": "~0.4.1",
     "grunt-autoprefixer": "~0.5.0",
     "grunt-bower-install": "~0.7.0",
+    "grunt-bower-task": "^0.3.4",
     "grunt-cdnify": "0.0.2",
     "grunt-cli": "^0.1.13",
     "grunt-concurrent": "~0.4.0",

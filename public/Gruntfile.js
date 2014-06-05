@@ -9,7 +9,7 @@
 
 module.exports = function (grunt) {
   // Load grunt tasks automatically
-  require('load-grunt-tasks')(grunt);
+  //require('load-grunt-tasks')(grunt);
 
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
@@ -38,12 +38,10 @@ module.exports = function (grunt) {
         files: ['test/spec/{,*/}*.js'],
         tasks: ['newer:jshint:test', 'karma']
       },
-      //
-      // compass: {
-      //   files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
-      //   tasks: ['compass:server', 'autoprefixer']
-      // },
-      // 
+      stylus: {
+        files: ['<%= yeoman.app %>/styles/{,*/}*.styl'],
+        tasks: ['compass:server', 'autoprefixer']
+      },
       gruntfile: {
         files: ['Gruntfile.js']
       },
@@ -175,29 +173,20 @@ module.exports = function (grunt) {
     //   }
     // },
     //
-    // less: {
-    //   development: {
-    //     options: {
-    //       paths: ['<%= yeoman.app %>/styles']
-    //     },
-    //     files: {
-    //       "path/to/result.css": "path/to/source.less"
-    //     }
-    //   },
-    //   production: {
-    //     options: {
-    //       paths: ['<%= yeoman.app %>/styles'],
-    //       cleancss: true,
-    //       modifyVars: {
-    //         imgPath: '"http://mycdn.com/path/to/images"',
-    //         bgColor: 'red'
-    //       }
-    //     },
-    //     files: {
-    //       "path/to/result.css": "path/to/source.less"
-    //     }
-    //   }
-    // },
+    stylus: {
+      compile: {
+        // options: {
+        //   paths: ['<%= yeoman.app %>/styles'],
+        // },
+        files: [{
+          expand: true,
+          cwd: '<%= yeoman.app %>/styles',
+          src: [ '**/*.styl' ],
+          dest: '.tmp/styles',
+          ext: '.css'
+        }]
+      }
+    },
 
     // Renames files for browser caching purposes
     rev: {
@@ -308,6 +297,19 @@ module.exports = function (grunt) {
           }
         ]
       },
+
+      bower: {
+          install: {
+              options: {
+                  targetDir: 'public/app/bower_components',
+                  install: true,
+                  verbose: false,
+                  cleanTargetDir: false,
+                  cleanBowerDir: false
+              }
+          }
+      },
+
       styles: {
         expand: true,
         cwd: '<%= yeoman.app %>/styles',
@@ -413,6 +415,7 @@ module.exports = function (grunt) {
   });
 
   grunt.registerTask('build', [
+    'bower',
     'clean:dist',
     'useminPrepare',
     'concurrent:dist',
@@ -425,6 +428,7 @@ module.exports = function (grunt) {
     'uglify',
     'rev',
     'usemin',
+    'stylus'
     //'clean:components'
   ]);
 
