@@ -312,7 +312,7 @@ module.exports = function (grunt) {
             targetDir: 'app/bower_components',
             install: true,
             verbose: false,
-            cleanTargetDir: false,
+            cleanTargetDir: true,
             cleanBowerDir: false
           }
         }
