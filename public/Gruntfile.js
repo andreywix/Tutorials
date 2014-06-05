@@ -9,11 +9,11 @@
 
 module.exports = function (grunt) {
   // Load grunt tasks automatically
-  //require('load-grunt-tasks')(grunt);
+  require('load-grunt-tasks')(grunt, {config: '../package.json', scope: ['devDependencies', 'dependencies']});
 
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
-  grunt.file.expand('../node_modules/grunt-*/tasks').forEach(grunt.loadTasks);
+  //grunt.file.expand('../node_modules/grunt-*/tasks').forEach(grunt.loadTasks);
   // Define the configuration for all the tasks
   grunt.initConfig({
 
@@ -264,7 +264,16 @@ module.exports = function (grunt) {
     // Replace Google CDN references
     cdnify: {
       dist: {
-        html: ['<%= yeoman.dist %>/*.html']
+        options: {
+          base: '//ajax.googleapis.com/ajax/libs/'
+        },
+        files: [{
+          expand: true,
+          cwd: '<%= yeoman.dist %>',
+          src: '*.html',
+          dest: '<%= yeoman.dist %>'
+        }]
+        //html: ['<%= yeoman.dist %>/*.html']
       }
     },
 
@@ -312,7 +321,7 @@ module.exports = function (grunt) {
             targetDir: 'app/bower_components',
             install: true,
             verbose: false,
-            cleanTargetDir: true,
+            cleanTargetDir: false,
             cleanBowerDir: false
           }
         }
